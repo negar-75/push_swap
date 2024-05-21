@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:44:24 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/08 15:44:46 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:06:17 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	current = lst;
-	while (1)
-	{
-		if (current->next == NULL)
-			return (current);
+	while (current->next != NULL)
 		current = current->next;
-	}
+	return (current);
 }
 
 // int main() {

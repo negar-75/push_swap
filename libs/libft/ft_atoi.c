@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:38:13 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 14:57:20 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:34:11 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	ft_atoi(const char *str)
 // 	printf("Testing ft_atoi(\"%s\")\n", s);
 
 // 	if (result_ft_atoi == result_atoi)
-// 		printf("Test passed: ft_atoi returned \"%d\" as , 
+// 		printf("Test passed: ft_atoi returned \"%d\" as ,
 //      atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
 // 	else
-// 		printf("Test failed: ft_atoi returned \"%d\", 
+// 		printf("Test failed: ft_atoi returned \"%d\",
 //      atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
 // }
 

@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 09:43:46 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 09:43:55 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:03:18 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*current;
-	int		size;
+	int	count;
 
-	if (!lst)
-		return (0);
-	current = lst;
-	size = 0;
-	while (1)
+	count = 0;
+	while (lst != NULL)
 	{
-		size++;
-		if (current->next == NULL)
-			break ;
-		current = current->next;
+		count++;
+		lst = lst->next;
 	}
-	return (size);
+	return (count);
 }
 
 // int main() {
