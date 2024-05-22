@@ -49,10 +49,10 @@ t_stack *init_stack_a (char **argv, int argc)
     new_stack = malloc(sizeof(t_stack));
     if(!new_stack)
         return (NULL);
-    new_stack->value = ft_atoi(argv[1]);
+    new_stack->value = ft_atoi(argv[0]);
 	set_index(new_stack, -1);
 	last_node = new_stack;
-	i = 2;
+	i = 1;
 	while (i < argc)
 	{
 		last_node->next = malloc(sizeof(t_stack));
@@ -65,15 +65,7 @@ t_stack *init_stack_a (char **argv, int argc)
 	}
     last_node->next = NULL;
     ini_indices(new_stack);
-    t_stack* current_node = new_stack;
-    
-    while (current_node) {
-        ft_printf("this is value %d\n", current_node->value);
-        ft_printf("this is index set %s\n", current_node->index_set ? "true" : "false");
-        ft_printf("this is i %d\n", current_node->i);
-        current_node = current_node->next;
-    }
-
     return new_stack;
 }
+
 

@@ -16,7 +16,7 @@ UTILS = $(addprefix $(UTILS_FOLDER), \
 	err_message.c \
 	stack_utils.c \
 	stack.c \
-	str_split.c \
+	str_funcs.c \
 	validate_input.c)
 ALL_SRCS = $(SRCS) $(UTILS)
 OBJS = $(ALL_SRCS:.c=.o)

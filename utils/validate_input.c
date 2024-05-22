@@ -29,24 +29,22 @@ void check_args_number(char *str,char **args,int argc)
 }
 void	validate_input(char	**argv, int argc)
 {
-	char **args;
+	
 	int	i;
 	int j;
 
 	j = 0;
-	i = 1;
-	if(argc == 2)
-		args = split_to_nums(argv[1]);
-	else
-		args = argv;
+	i = 0;
+	
 	while( i < argc)
 	{
-		check_args_number(argv[i],args,argc);
+		check_args_number(argv[i],argv,argc);
 		j = i + 1;
 		while( j < argc)
 		{
+			ft_printf("%s %s",argv[i],argv[j]);
 			if(ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				fail_fun("Duplicate",args,argc);
+				fail_fun("Duplicate",argv,argc);
 			j++;	
 		} 
 		i++;
