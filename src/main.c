@@ -13,7 +13,9 @@ int main(int argc, char**argv)
   else 
     	args = argv + 1;
   validate_input(args,get_len(args));
-  
   a = init_stack_a(args,get_len(args));
+  if(!a)
+	return (-1);
+  
   return 0; 
 }

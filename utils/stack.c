@@ -1,4 +1,11 @@
 #include "../push_swap.h"
+
+//s[0] --> find the lowest number after s[1]
+//s[1] -->lowset
+//s[2] -->highest
+//s[3] --> head
+//s[4] --> head
+
 static void	set_indices(t_stack *stack, t_stack	*s[5])
 {
 	unsigned int	cur_i;	
@@ -20,19 +27,24 @@ static void	set_indices(t_stack *stack, t_stack	*s[5])
 		s[3] = s[3]->next;
 	}
 }
-static void	ini_indices(t_stack *stack)
+
+//s[0] -->
+//s[1] -->lowset
+//s[2] -->highest
+//s[3] -->NULL
+//s[4] -->
+
+static void	initialize_indices(t_stack *stack)
 {
 	t_stack			*s[5];
 
-	s[1] = stack;
-	s[2] = stack;
-	s[3] = stack;
+	s[1] = stack; //the lowest
+	s[2] = stack; //the highest
+	s[3] = stack; //the head of the stack 
 	while (s[3])
 	{
-        ft_printf("%d %d\n",s[3] ->value,s[1]->value);
-		if (s[3]->value < s[1]->value)
+       if (s[3]->value < s[1]->value)
 			s[1] = s[3];
-         ft_printf("%d %d\n",s[3] ->value,s[2]->value);
 		if (s[3]->value > s[2]->value)
 			s[2] = s[3];
 		s[3] = s[3]->next;
@@ -64,7 +76,7 @@ t_stack *init_stack_a (char **argv, int argc)
 		i++;
 	}
     last_node->next = NULL;
-    ini_indices(new_stack);
+    initialize_indices(new_stack);
     return new_stack;
 }
 

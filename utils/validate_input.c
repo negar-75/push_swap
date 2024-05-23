@@ -29,7 +29,6 @@ void check_args_number(char *str,char **args,int argc)
 }
 void	validate_input(char	**argv, int argc)
 {
-	
 	int	i;
 	int j;
 
@@ -42,7 +41,6 @@ void	validate_input(char	**argv, int argc)
 		j = i + 1;
 		while( j < argc)
 		{
-			ft_printf("%s %s",argv[i],argv[j]);
 			if(ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				fail_fun("Duplicate",argv,argc);
 			j++;	
