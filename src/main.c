@@ -16,6 +16,9 @@ int main(int argc, char**argv)
   a = init_stack_a(args,get_len(args));
   if(!a)
 	return (-1);
-  
+  if(!is_sorted(a))
+  {
+   ft_printf("%d",a->value); 
+  }
   return 0; 
 }

@@ -28,4 +28,5 @@ char**   split_to_nums(char* str);
 void set_index(t_stack *node, long i);
 t_stack *init_stack_a (char **argv, int argc);
 int get_len(char ** str);
+t_bool	is_sorted(t_stack *a);
 #endif

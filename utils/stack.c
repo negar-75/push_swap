@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/23 13:52:57 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/05/23 13:53:10 by nnasiri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-//s[0] --> find the lowest number after s[1]
-//s[1] -->lowset
-//s[2] -->highest
-//s[3] --> head
-//s[4] --> head
+// s[0] --> find the lowest number after s[1]
+// s[1] -->lowset
+// s[2] -->highest
+// s[3] --> head
+// s[4] --> head
 
-static void	set_indices(t_stack *stack, t_stack	*s[5])
+static void	set_indices(t_stack *stack, t_stack *s[5])
 {
-	unsigned int	cur_i;	
+	unsigned int	cur_i;
 
 	cur_i = 1;
 	s[3] = stack;
@@ -28,22 +40,22 @@ static void	set_indices(t_stack *stack, t_stack	*s[5])
 	}
 }
 
-//s[0] -->
-//s[1] -->lowset
-//s[2] -->highest
-//s[3] -->NULL
-//s[4] -->
+// s[0] -->
+// s[1] -->lowset
+// s[2] -->highest
+// s[3] -->NULL
+// s[4] -->
 
 static void	initialize_indices(t_stack *stack)
 {
-	t_stack			*s[5];
+	t_stack	*s[5];
 
-	s[1] = stack; //the lowest
-	s[2] = stack; //the highest
-	s[3] = stack; //the head of the stack 
+	s[1] = stack; // the lowest
+	s[2] = stack; // the highest
+	s[3] = stack; // the head of the stack
 	while (s[3])
 	{
-       if (s[3]->value < s[1]->value)
+		if (s[3]->value < s[1]->value)
 			s[1] = s[3];
 		if (s[3]->value > s[2]->value)
 			s[2] = s[3];
@@ -52,16 +64,17 @@ static void	initialize_indices(t_stack *stack)
 	set_index(s[1], 0);
 	set_indices(stack, s);
 }
-t_stack *init_stack_a (char **argv, int argc)
-{
-    t_stack *new_stack;
-    t_stack *last_node;
-    int i;
 
-    new_stack = malloc(sizeof(t_stack));
-    if(!new_stack)
-        return (NULL);
-    new_stack->value = ft_atoi(argv[0]);
+t_stack	*init_stack_a(char **argv, int argc)
+{
+	t_stack	*new_stack;
+	t_stack	*last_node;
+	int		i;
+
+	new_stack = malloc(sizeof(t_stack));
+	if (!new_stack)
+		return (NULL);
+	new_stack->value = ft_atoi(argv[0]);
 	set_index(new_stack, -1);
 	last_node = new_stack;
 	i = 1;
@@ -75,9 +88,7 @@ t_stack *init_stack_a (char **argv, int argc)
 		set_index(last_node, -1);
 		i++;
 	}
-    last_node->next = NULL;
-    initialize_indices(new_stack);
-    return new_stack;
+	last_node->next = NULL;
+	initialize_indices(new_stack);
+	return (new_stack);
 }
-
-
