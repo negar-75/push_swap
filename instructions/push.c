@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-static void	push(t_stack *src,t_stack *dest)
+static void push(t_stack **src, t_stack **dest)
 {
-	t_stack	*tmp;
+    t_stack *tmp;
 
-	if (!src || !dest)
-		return ;
-		tmp = src;
-		stacks->a = src->n;
-		buffer_node->n = stacks->b;
-		stacks->b = buffer_node;
+    if (!src || !*src) {
+        return;
+    }
+    tmp = *src;
+    *src = (*src)->next;
+    tmp->next = *dest;
+    *dest = tmp;
 }
 
-
-long	pa(t_stacks *stacks, t_bool print)
+long	pa(t_stack **a,t_stack **b, t_bool print)
 {
-	push(stacks, ft_false);
+	push(b,a);
 	if (print)
 		ft_printf("pa\n");
 	return (1);
 }
 
-long	pb(t_stacks *stacks, t_bool print)
+long	pb(t_stack **a,t_stack **b, t_bool print)
 {
-	push(stacks, ft_true);
+	push(a,b);
 	if (print)
 		ft_printf("pb\n");
 	return (1);

@@ -47,3 +47,16 @@ t_bool	is_sorted(t_stack *a)
     }
 	return (1);
 }
+
+int	ft_stack_size(t_stack *s)
+{
+	int	count;
+
+	count = 0;
+	while (s != NULL)
+	{
+		count++;
+		s = s->next;
+	}
+	return (count);
+}
