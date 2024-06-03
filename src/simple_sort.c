@@ -1,84 +1,86 @@
 #include "../push_swap.h"
 
-void init_arr(int stack_size,t_stack *a)
+void	init_arr(int *nums, t_stack *a)
 {
+	t_stack	*current;
+	int		i;
 
+	i = 0;
+	current = a;
+	while (current)
+	{
+		nums[i] = current->value;
+		current = current->next;
+        i++;
+	}
 }
 
-long sort_3(t_stack **a)
+void	sort_3(t_stack **a)
 {
-	int	nums[3];
-	long	count_actions;
+	int		s[3];
 
-	count_actions = 0;
-	nums[0] = (*a)->value;
-	nums[1] = (*a)->next->value;
-	nums[2] = (*a)->next->next->value;
-	if(nums[0] > nums[1] && nums[1] < nums[2] && nums[2] > nums[0])
-		count_actions += sa(a,true);
-	else if (nums[0] > nums[1] && nums[1] < nums[2] && nums[2] < nums[0])
-		count_actions += ra(a,true);
-	else if(nums[0] < nums[1] && nums[1] > nums[2] && nums[2] < nums[0])
-		count_actions += rra(a,true);
-	else if (nums[0] > nums[1] && nums[1] > nums[2] && nums[2] < nums[0])
+    init_arr(s,*a);
+    if (s[0] > s[1] && s[1] < s[2] && s[2] > s[0])
+		sa(a, true);
+	else if (s[0] > s[1] && s[1] < s[2] && s[2] < s[0])
+		ra(a, true);
+	else if (s[0] < s[1] && s[1] > s[2] && s[2] < s[0])
+		rra(a, true);
+	else if (s[0] > s[1] && s[1] > s[2] && s[2] < s[0])
 	{
-		count_actions += sa(a, true);
-		count_actions += rra(a, true);
+        sa(a, true);
+        rra(a, true);
 	}
-	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[2] > nums[0])
+	else if (s[0] < s[1] && s[1] > s[2] && s[2] > s[0])
 	{
-		count_actions += sa(a, true);
-		count_actions += ra(a, true);
+        sa(a, true);
+        ra(a, true);
 	}
-	return(count_actions);
 }
 
-long sort_4(t_stack **a, t_stack **b)
+void	sort_4(t_stack **a, t_stack **b)
 {
-	int s[4];
-	long	count_actions;
-	t_stack *current;
-
-    current = *a;
-    for (int i = 0; i < 4; i++) {
-        s[i] = current->value;
-        current = current->next;
-    }
-	if (s[0] < s[1] && s[0] < s[2] && s[0] < s[3]) {
-        count_actions +=pb(a, b, true);
-    } else if (s[1] < s[0] && s[1] < s[2] && s[1] < s[3]) {
-        count_actions +=sa(a, true);
-        count_actions +=pb(a, b, true);
-    } else if (s[2] < s[0] && s[2] < s[1] && s[2] < s[3]) {
-        count_actions +=ra(a, true);
-        count_actions +=ra(a, true);
-        count_actions +=pb(a, b, true);
-    } else if (s[3] < s[0] && s[3] < s[1] && s[3] < s[2])
+	int		s[4];
+    
+    init_arr(s,*a);
+    if (s[0] < s[1] && s[0] < s[2] && s[0] < s[3])
+        pb(a, b, true);
+	else if (s[1] < s[0] && s[1] < s[2] && s[1] < s[3])
 	{
-        count_actions += rra(a, true);
-        count_actions += pb(a, b, true);
-    }
+        sa(a, true);
+		pb(a, b, true);
+	}
+	else if (s[2] < s[0] && s[2] < s[1] && s[2] < s[3])
+	{
+		ra(a, true);
+		ra(a, true);
+		pb(a, b, true);
+	}
+	else if (s[3] < s[0] && s[3] < s[1] && s[3] < s[2])
+	{
+		rra(a, true);
+		pb(a, b, true);
+	}
 	if (ft_stack_size(*a) == 3)
-		count_actions += sort_3(a);
-    pa(a, b, true);
-	return count_actions;
+		sort_3(a);
+	pa(a, b, true);
 }
 
-void simple_sort (t_stack **a, t_stack **b)
+void	simple_sort(t_stack **a, t_stack **b)
 {
-    int size;
+	int size;
 
-    size = ft_stack_size(*a);
-    if (size == 0 || size == 1)
-        return;
-    if(size == 2)
-        sa(a,true);
-    else if(size == 3)
-        sort_3(a);
-    else if(size == 4)
-        sort_4(a,b);
-    // else if(size == 5)
-    //     sort_5(a);
-    else
-        return;
+	size = ft_stack_size(*a);
+	if (size == 0 || size == 1)
+		return ;
+	if (size == 2)
+		sa(a, true);
+	else if (size == 3)
+		sort_3(a);
+	else if (size == 4)
+		sort_4(a, b);
+	// else if(size == 5)
+	//     sort_5(a);
+	else
+		return ;
 }
