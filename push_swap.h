@@ -20,7 +20,7 @@ typedef struct s_stack
 }t_stack;
 
 
-void	validate_input(char	**argv, int argc);
+void	validate_input(char **argv, int size, int argc);
 void	err_message(char *s);
 char	**split_to_nums(char* str);
 void	set_index(t_stack *node, long i);

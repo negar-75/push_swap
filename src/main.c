@@ -22,18 +22,18 @@ int main(int argc, char**argv)
 		args = split_to_nums(argv[1]);
   else
   		args = argv + 1;
-  validate_input(args,get_len(args));
+  validate_input(args,get_len(args), argc);
   a = init_stack_a(args,get_len(args));
   if(!a)
-	return (-1);
+    return (-1);
   if(!is_sorted(a))
   {
-	sort_stack(&a,&b);
+    sort_stack(&a,&b);
   }
   while(a)
   {
 	ft_printf("%d ", a->value);
 	a = a->next;
   }
-  return 0; 
+  return 0;
 }
