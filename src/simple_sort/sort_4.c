@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	sort_4(t_stack **a, t_stack **b)
 {

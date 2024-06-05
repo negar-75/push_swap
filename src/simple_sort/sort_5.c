@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../../push_swap.h"
 int find_min_index(t_stack **a)
 {
     int min_index;
