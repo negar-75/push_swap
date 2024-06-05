@@ -25,18 +25,14 @@ static void push(t_stack **src, t_stack **dest)
     *dest = tmp;
 }
 
-long	pa(t_stack **a,t_stack **b, t_bool print)
+void	pa(t_stack **a,t_stack **b)
 {
 	push(b,a);
-	if (print)
-		ft_printf("pa\n");
-	return (1);
+	ft_printf("pa\n");
 }
 
-long	pb(t_stack **a,t_stack **b, t_bool print)
+void	pb(t_stack **a,t_stack **b)
 {
 	push(a,b);
-	if (print)
-		ft_printf("pb\n");
-	return (1);
+	ft_printf("pb\n");
 }

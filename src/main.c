@@ -32,7 +32,7 @@ int main(int argc, char**argv)
   }
   while(a)
   {
-	ft_printf("%d", a->value);
+	ft_printf("%d ", a->value);
 	a = a->next;
   }
   return 0; 

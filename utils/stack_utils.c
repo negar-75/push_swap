@@ -60,3 +60,18 @@ int	ft_stack_size(t_stack *s)
 	}
 	return (count);
 }
+
+void	init_arr(int *nums, t_stack **a)
+{
+	t_stack	*current;
+	int		i;
+
+	i = 0;
+	current = *a;
+	while (current)
+	{
+		nums[i] = current->value;
+		current = current->next;
+		i++;
+	}
+}

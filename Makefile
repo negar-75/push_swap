@@ -14,7 +14,10 @@ FT_PRINTF = $(FT_PRINTF_FOLDER)libftprintf.a
 
 SRCS = $(addprefix $(SRC_FOLDER), \
 	main.c \
-	simple_sort.c)
+	simple_sort.c \
+	sort_3.c \
+	sort_4.c \
+	sort_5.c )
 
 UTILS = $(addprefix $(UTILS_FOLDER), \
 	err_message.c \

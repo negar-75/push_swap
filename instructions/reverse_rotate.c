@@ -1,43 +1,41 @@
 #include "../push_swap.h"
 
-static void	reverse_rotate(t_stack **a)
+static void reverse_rotate(t_stack **a)
 {
-    if (!a || !(*a) || !(*a)->next) {
+    if (!a || !(*a) || !(*a)->next)
         return;
-    }
+
     t_stack *current;
-    
+    t_stack *last;
+
     current = *a;
-    while(current->next)
+    while (current->next->next)
         current = current->next;
-    if (current->before)
-        current->before->next = NULL;
-    (*a)->before = current;
-    current->before = NULL;
-    current->next = *a;
-    *a = current;
-}
-long	rra(t_stack **a, t_bool print)
-{
-	reverse_rotate(a);
-	if (print)
-		ft_printf("rra\n");
-	return (1);
+    
+    last = current->next;
+    current->next = NULL;
+    last->next = *a;
+    last->before = NULL;
+    if (*a)
+        (*a)->before = last;
+    *a = last;
 }
 
-long	rrb(t_stack **b, t_bool print)
+void	rra(t_stack **a)
 {
-	reverse_rotate(b);
-	if (print)
-		ft_printf("rrb\n");
-	return (1);
+	reverse_rotate(a);
+	ft_printf("rra\n");
 }
 
-long	rrr(t_stack **a, t_stack **b, t_bool print)
+void	rrb(t_stack **b)
+{
+	reverse_rotate(b);
+	ft_printf("rrb\n");
+}
+
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	if (print)
-		ft_printf("rrr\n");
-	return (1);
+	ft_printf("rrr\n");
 }

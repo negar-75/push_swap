@@ -31,18 +31,24 @@ int	get_len(char ** str);
 t_bool	is_sorted(t_stack *a);
 int	ft_stack_size(t_stack *s);
 void simple_sort (t_stack **a, t_stack **b);
+void	init_arr(int *nums, t_stack **a);
 
-long	rra(t_stack **a, t_bool print);
-long	rrb(t_stack **b, t_bool print);
-long	rrr(t_stack **a, t_stack **b, t_bool print);
+void rra(t_stack **a);
+void rrb(t_stack **b);
+void rrr(t_stack **a, t_stack **b);
 
-long	ra(t_stack **a, t_bool print);
-long	rb(t_stack **b, t_bool print);
-long	rr(t_stack **a, t_stack **b, t_bool print);
+void ra(t_stack **a);
+void rb(t_stack **b);
+void rr(t_stack **a, t_stack **b);
 
-long	pa(t_stack **a,t_stack **b, t_bool print);
-long	pb(t_stack **a,t_stack **b, t_bool print);
+void pa(t_stack **a,t_stack **b);
+void pb(t_stack **a,t_stack **b);
 
-long	sa(t_stack **a, t_bool print);
-long	sb(t_stack **b, t_bool print);
+void sa(t_stack **a);
+void sb(t_stack **b);
+
+void	sort_3(t_stack **a);
+void	sort_4(t_stack **a, t_stack **b);
+void	sort_5(t_stack	**a,t_stack	**b);
+
 #endif

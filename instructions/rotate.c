@@ -1,43 +1,41 @@
 #include "../push_swap.h"
 
-static void	rotate(t_stack **s)
+static void rotate(t_stack **s)
 {
-    if (!s || !(*s) || !(*s)->next) 
+    if (!s || !(*s) || !(*s)->next)
         return;
+
     t_stack *temp;
     t_stack *current;
 
-    current = *s; 
-    temp = *s;
-    while(current->next)
+    current = *s;
+    while (current->next)
     {
-        current++;
+        current = current->next;
     }
+    temp = *s;
+    *s = (*s)->next;
+    (*s)->before = NULL;
     current->next = temp;
     temp->next = NULL;
+    temp->before = current;
 }
 
-long	ra(t_stack **a, t_bool print)
+void	ra(t_stack **a)
 {
 	rotate(a);
-	if (print)
-		ft_printf("ra\n");
-	return (1);
+	ft_printf("ra\n");
 }
 
-long	rb(t_stack **b, t_bool print)
+void	rb(t_stack **b)
 {
 	rotate(b);
-	if (print)
-		ft_printf("rb\n");
-	return (1);
+	ft_printf("rb\n");
 }
 
-long	rr(t_stack **a, t_stack **b, t_bool print)
+void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	if (print)
-		ft_printf("rr\n");
-	return (1);
+	ft_printf("rr\n");
 }

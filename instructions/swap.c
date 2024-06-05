@@ -18,18 +18,14 @@ static void	swap(t_stack **s)
     *s = second;
 }
 
-long	sa(t_stack **a, t_bool print)
+void	sa(t_stack **a)
 {
 	swap(a);
-	if (print)
-		ft_printf("sa\n");
-	return (1);
+	ft_printf("sa\n");
 }
 
-long	sb(t_stack **b, t_bool print)
+void	sb(t_stack **b)
 {
 	swap(b);
-	if (print)
-		ft_printf("sb\n");
-	return (1);
+	ft_printf("sb\n");
 }
