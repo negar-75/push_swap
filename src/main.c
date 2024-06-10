@@ -3,10 +3,10 @@
 
 static void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_stack_size(*stack_a) <= 5)
+	if (stack_size(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
-	// else
-	// 	radix_sort(stack_a, stack_b);
+	else
+		algorithm_sort(stack_a, stack_b);
 }
 
 
@@ -26,14 +26,9 @@ int main(int argc, char**argv)
   a = init_stack_a(args,get_len(args));
   if(!a)
     return (-1);
+  b = NULL;
   if(!is_sorted(a))
-  {
-    sort_stack(&a,&b);
-  }
-  while(a)
-  {
-	ft_printf("%d ", a->value);
-	a = a->next;
-  }
-  return 0;
+  	sort_stack(&a,&b);
+  
+  
 }

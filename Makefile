@@ -17,7 +17,12 @@ SRCS = $(addprefix $(SRC_FOLDER), \
 	simple_sort/simple_sort.c \
 	simple_sort/sort_3.c \
 	simple_sort/sort_4.c \
-	simple_sort/sort_5.c )
+	simple_sort/sort_5.c  \
+	algorithm/algorithm_utils.c \
+	algorithm/apply_rotation.c \
+	algorithm/big_sort.c \
+	algorithm/calculate_cost.c \
+	algorithm/rotate.c )
 
 UTILS = $(addprefix $(UTILS_FOLDER), \
 	err_message.c \

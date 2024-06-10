@@ -1,24 +1,20 @@
 #include "../push_swap.h"
 
-static void reverse_rotate(t_stack **a)
+static void reverse_rotate(t_stack **s)
 {
-    if (!a || !(*a) || !(*a)->next)
-        return;
+    if (!s || !(*s) || !(*s)->next)
+        return; // If the stack is empty or has only one element, do nothing
 
-    t_stack *current;
-    t_stack *last;
+    t_stack *current = *s;
 
-    current = *a;
     while (current->next->next)
         current = current->next;
-    
-    last = current->next;
-    current->next = NULL;
-    last->next = *a;
+    t_stack *last = current->next;
+    current->next = NULL; 
+    last->next = *s;
     last->before = NULL;
-    if (*a)
-        (*a)->before = last;
-    *a = last;
+    (*s)->before = last;
+    *s = last;
 }
 
 void	rra(t_stack **a)

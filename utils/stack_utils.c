@@ -48,7 +48,7 @@ t_bool	is_sorted(t_stack *a)
 	return (1);
 }
 
-int	ft_stack_size(t_stack *s)
+int	stack_size(t_stack *s)
 {
 	int	count;
 
@@ -60,7 +60,17 @@ int	ft_stack_size(t_stack *s)
 	}
 	return (count);
 }
+t_stack *last_node(t_stack *a)
+{
+	t_stack *tmp;
 
+	tmp = a;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	return tmp;
+}
 void	init_arr(int *nums, t_stack **a)
 {
 	t_stack	*current;

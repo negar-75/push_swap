@@ -23,7 +23,7 @@ void	sort_4(t_stack **a, t_stack **b)
 		rra(a);
 		pb(a, b);
 	}
-	if (ft_stack_size(*a) == 3)
+	if (stack_size(*a) == 3)
 		sort_3(a);
 	pa(a, b);
 }

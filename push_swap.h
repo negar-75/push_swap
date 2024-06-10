@@ -5,6 +5,7 @@
 #include "libs/libft/libft.h"
 #include <limits.h>
 
+
 typedef enum {
     false = 0,
     true = 1
@@ -29,26 +30,48 @@ int	get_len(char ** str);
 
 
 t_bool	is_sorted(t_stack *a);
-int	ft_stack_size(t_stack *s);
-void simple_sort (t_stack **a, t_stack **b);
+int		stack_size(t_stack *s);
+void 	simple_sort (t_stack **a, t_stack **b);
 void	init_arr(int *nums, t_stack **a);
 
-void rra(t_stack **a);
-void rrb(t_stack **b);
-void rrr(t_stack **a, t_stack **b);
+void 	rra(t_stack **a);
+void 	rrb(t_stack **b);
+void 	rrr(t_stack **a, t_stack **b);
 
-void ra(t_stack **a);
-void rb(t_stack **b);
-void rr(t_stack **a, t_stack **b);
+void 	ra(t_stack **a);
+void 	rb(t_stack **b);
+void 	rr(t_stack **a, t_stack **b);
 
-void pa(t_stack **a,t_stack **b);
-void pb(t_stack **a,t_stack **b);
+void 	pa(t_stack **a,t_stack **b);
+void 	pb(t_stack **a,t_stack **b);
 
-void sa(t_stack **a);
-void sb(t_stack **b);
+void 	sa(t_stack **a);
+void 	sb(t_stack **b);
 
 void	sort_3(t_stack **a);
 void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack	**a,t_stack	**b);
+
+void 	algorithm_sort(t_stack **a,t_stack **b);
+t_stack 	*last_node(t_stack *a);
+int 	get_max(t_stack *a);
+int 	get_min(t_stack *a);
+
+int		find_place_in_b(t_stack *b, int num_to_push);
+int 	find_place_in_a(t_stack *a, int num_to_push_back);
+int 	find_index(t_stack *a,int num);
+int		rotate_type_ab(t_stack **a, t_stack **b);
+int rotate_type_ba(t_stack **a, t_stack **b);
+int 	get_max(t_stack *a);
+int		get_min(t_stack *a);
+int 	cost_rra_rrb (t_stack **a, t_stack **b, int num, char source);
+int		cost_ra_rb (t_stack **a, t_stack **b, int num,char source);
+int 	cost_ra_rrb(t_stack **a, t_stack **b, int num,char source);
+int 	cost_rra_rb(t_stack **a, t_stack **b, int num,char source);
+
+int do_ra_rb(t_stack **a, t_stack **b, int num,char source);
+int do_rra_rrb(t_stack **a, t_stack **b, int num,char source);
+int do_ra_rrb(t_stack **a, t_stack **b, int num,char source);
+int do_rra_rb(t_stack **a, t_stack **b, int num,char source);
 
 #endif

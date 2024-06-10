@@ -4,7 +4,7 @@ void	simple_sort(t_stack **a, t_stack **b)
 {
 	int size;
 
-	size = ft_stack_size(*a);
+	size = stack_size(*a);
 	if (size == 0 || size == 1)
 		return ;
 	if (size == 2)

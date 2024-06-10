@@ -1,0 +1,89 @@
+#include "../../push_swap.h"
+
+void sub_init_b (t_stack **a,t_stack **b)
+{
+    int		i;
+	t_stack	*tmp;
+
+	while (stack_size(*a) > 3 && !is_sorted(*a))
+	{
+		tmp = *a;
+		i = rotate_type_ab(a, b);
+		while (i >= 0)
+		{
+			if (i == cost_ra_rb(a, b, tmp->value,'a'))
+				i = do_ra_rb(a, b, tmp->value,'a');
+			else if (i == cost_rra_rrb(a, b, tmp->value,'a'))
+				i = do_rra_rrb(a, b, tmp->value,'a');
+			else if (i == cost_ra_rrb(a, b, tmp->value,'a'))
+				i = do_ra_rrb(a, b, tmp->value,'a');
+			else if (i == cost_rra_rb(a, b, tmp->value,'a'))
+				i = do_rra_rb(a, b, tmp->value,'a');
+			else
+				tmp = tmp->next;
+		}
+	}
+}
+
+void init_b (t_stack **a,t_stack **b)
+{
+	if (stack_size(*a) > 3 && !is_sorted(*a))
+		pb(a, b);
+	if (stack_size(*a) > 3 && !is_sorted(*a))
+		pb(a, b);
+	if (stack_size(*a) > 3 && !is_sorted(*a))
+		sub_init_b(a, b);
+	if (!is_sorted(*a))
+		sort_3(a);
+}
+
+void push_back_to_a(t_stack **a, t_stack **b)
+{
+	int		i;
+	t_stack	*tmp;
+
+	while (*b)
+	{
+		tmp = *b;
+        i = rotate_type_ba(a, b);
+		while (i >= 0)
+		{
+			if (i == cost_ra_rb(a, b, tmp->value,'b'))
+				i = do_ra_rb(a, b, tmp->value, 'b');
+			else if (i == cost_ra_rrb(a, b, tmp->value,'b'))
+				i = do_ra_rrb(a, b, tmp->value, 'b');
+			else if (i == cost_rra_rrb(a, b, tmp->value,'b'))
+				i = do_rra_rrb(a, b, tmp->value, 'b');
+			else if (i == cost_rra_rb(a, b, tmp->value,'b'))
+				i = do_rra_rb(a, b, tmp->value, 'b');
+			else
+				tmp = tmp->next;
+		}
+	}
+}
+
+
+
+
+void algorithm_sort(t_stack **a,t_stack **b)
+{
+    init_b(a,b);
+    t_stack *tmp = *b;
+
+    while(tmp)
+    {
+        ft_printf("%d ", tmp->value);
+        tmp = tmp->next;
+    }
+    
+    ft_printf("\n");
+   
+    push_back_to_a(a,b);
+    t_stack *tmp2 = *a;
+     while(tmp2)
+    {
+        ft_printf("%d ", tmp2->value);
+        tmp2 = tmp2->next;
+    }
+    ft_printf("\n");
+}

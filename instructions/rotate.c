@@ -3,17 +3,15 @@
 static void rotate(t_stack **s)
 {
     if (!s || !(*s) || !(*s)->next)
-        return;
+        return; 
 
-    t_stack *temp;
-    t_stack *current;
+    t_stack *temp = *s;
+    t_stack *current = *s;
 
-    current = *s;
-    while (current->next)
+   while (current->next)
     {
         current = current->next;
     }
-    temp = *s;
     *s = (*s)->next;
     (*s)->before = NULL;
     current->next = temp;
