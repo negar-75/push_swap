@@ -67,23 +67,19 @@ void push_back_to_a(t_stack **a, t_stack **b)
 
 void algorithm_sort(t_stack **a,t_stack **b)
 {
-    init_b(a,b);
-    t_stack *tmp = *b;
+    int i;
 
-    while(tmp)
-    {
-        ft_printf("%d ", tmp->value);
-        tmp = tmp->next;
-    }
-    
-    ft_printf("\n");
-   
+    init_b(a,b);
     push_back_to_a(a,b);
-    t_stack *tmp2 = *a;
-     while(tmp2)
+    i = find_index(*a,get_min(*a));
+    if(i < stack_size(*a) / 2)
     {
-        ft_printf("%d ", tmp2->value);
-        tmp2 = tmp2->next;
+        while((*a)->value != get_min(*a))
+            ra(a);
     }
-    ft_printf("\n");
+    else
+    {
+        while((*a)->value != get_min(*a))
+            rra(a);
+    }
 }
