@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:53:16 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/05/23 14:17:34 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/11 16:06:43 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ void	set_index(t_stack *node, long i)
 t_bool	is_sorted(t_stack *a)
 {
 	t_stack	*current;
-	t_stack *ne;
+	t_stack	*ne;
 
 	current = a;
-	while(current)
-    {
-        ne = current->next;
-        while(ne)
-        {
-            if(current->value > ne->value)
-            {
-                return (0);
-            }
-            ne = ne->next;
-        }
-        current = current->next;
-    }
+	while (current)
+	{
+		ne = current->next;
+		while (ne)
+		{
+			if (current->value > ne->value)
+			{
+				return (0);
+			}
+			ne = ne->next;
+		}
+		current = current->next;
+	}
 	return (1);
 }
 
@@ -60,21 +60,21 @@ int	stack_size(t_stack *s)
 	}
 	return (count);
 }
-t_stack *last_node(t_stack *a)
+t_stack	*last_node(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = a;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
 	}
-	return tmp;
+	return (tmp);
 }
 void	init_arr(int *nums, t_stack **a)
 {
-	t_stack	*current;
-	int		i;
+	t_stack *current;
+	int i;
 
 	i = 0;
 	current = *a;

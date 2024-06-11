@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:52:40 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/05/23 13:52:44 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/11 16:48:47 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	**split_to_nums(char *str)
 
 int	get_len(char **str)
 {
-	int len = 0;
+	int len;
+
+	len = 0;
 	while (str[len] != NULL)
 		len++;
 	return (len);

@@ -1,22 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/11 16:03:14 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/06/11 16:09:24 by nnasiri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-static void rotate(t_stack **s)
+static void	rotate(t_stack **s)
 {
-    if (!s || !(*s) || !(*s)->next)
-        return; 
+	t_stack	*temp;
+	t_stack	*current;
 
-    t_stack *temp = *s;
-    t_stack *current = *s;
-
-   while (current->next)
-    {
-        current = current->next;
-    }
-    *s = (*s)->next;
-    (*s)->before = NULL;
-    current->next = temp;
-    temp->next = NULL;
-    temp->before = current;
+	if (!s || !(*s) || !(*s)->next)
+		return ;
+	temp = *s;
+	current = *s;
+	while (current->next)
+	{
+		current = current->next;
+	}
+	*s = (*s)->next;
+	(*s)->before = NULL;
+	current->next = temp;
+	temp->next = NULL;
+	temp->before = current;
 }
 
 void	ra(t_stack **a)

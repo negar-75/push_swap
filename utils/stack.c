@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:52:57 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/05/23 13:53:10 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/11 16:12:49 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ static void	initialize_indices(t_stack *stack)
 {
 	t_stack	*s[5];
 
-	s[1] = stack; // the lowest
-	s[2] = stack; // the highest
-	s[3] = stack; // the head of the stack
+	s[1] = stack;
+	s[2] = stack;
+	s[3] = stack;
 	while (s[3])
 	{
 		if (s[3]->value < s[1]->value)

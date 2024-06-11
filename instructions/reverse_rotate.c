@@ -1,20 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/11 16:02:37 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/06/11 16:09:13 by nnasiri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-static void reverse_rotate(t_stack **s)
+static void	reverse_rotate(t_stack **s)
 {
-    if (!s || !(*s) || !(*s)->next)
-        return; // If the stack is empty or has only one element, do nothing
+	t_stack	*current;
+	t_stack	*last;
 
-    t_stack *current = *s;
-
-    while (current->next->next)
-        current = current->next;
-    t_stack *last = current->next;
-    current->next = NULL; 
-    last->next = *s;
-    last->before = NULL;
-    (*s)->before = last;
-    *s = last;
+	if (!s || !(*s) || !(*s)->next)
+		return ;
+	current = *s;
+	while (current->next->next)
+		current = current->next;
+	last = current->next;
+	current->next = NULL;
+	last->next = *s;
+	last->before = NULL;
+	(*s)->before = last;
+	*s = last;
 }
 
 void	rra(t_stack **a)

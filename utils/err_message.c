@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:53:28 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/05/23 13:53:32 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/11 19:41:38 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	err_message(char *s)
 {
-	ft_printf("Error : %s", s);
+	ft_printf("%s", s);
 	exit(1);
 }

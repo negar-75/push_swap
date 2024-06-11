@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:52:21 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/05 17:52:25 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/11 19:39:06 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ int	ft_atoi2(const char *str, char **argv, int argc)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			fail_fun("Invalid argument", argv, argc);
+			fail_fun("Error", argv, argc);
 		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		fail_fun("Invalid argument", argv, argc);
+		fail_fun("Error", argv, argc);
 	return (mod * i);
 }
 
@@ -66,17 +66,21 @@ void	validate_input(char **argv, int size, int argc)
 {
 	int	i;
 	int	j;
-
+	int num;
+	
 	j = 0;
 	i = 0;
 	while (i < size)
 	{
-		ft_atoi2(argv[i], argv, argc);
+		num = ft_atoi2(argv[i], argv, argc);
+		ft_printf("%d",num);
+		if(ft_strncmp(argv[i],"0",1) != 0 && num == 0)
+			fail_fun("Error", argv, argc);
 		j = i + 1;
 		while (j < size)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				fail_fun("Duplicate", argv, argc);
+				fail_fun("Error", argv, argc);
 			j++;
 		}
 		i++;
