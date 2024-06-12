@@ -12,24 +12,23 @@
 
 #include "../push_swap.h"
 
-void	ft_free(char **str)
+void	ft_free_split(char **str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (str[i])
+	{
+		free(str[i]);
 		i++;
-	while (i >= 0)
-		free(str[i--]);
+	}
+	free(str);
 }
 
-void	fail_fun(char *message, char **argv, int argc)
+void	ft_fail(char *message, char **args, int argc)
 {
 	if (argc == 2)
-	{
-		ft_printf("args is 2");
-		ft_free(argv);
-	}
+		ft_free_split(args);
 	err_message(message);
 }
 
@@ -43,26 +42,25 @@ int	ft_atoi2(const char *str, char **argv, int argc)
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
 		|| *str == '\v' || *str == '\r')
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		mod = -1;
+		if(*str == '-')
+			mod = -1;
 		str++;
 	}
-	else if (*str == '+')
-		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			fail_fun("Error", argv, argc);
+			ft_fail("Error", argv, argc);
 		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		fail_fun("Error", argv, argc);
+		ft_fail("Error", argv, argc);
 	return (mod * i);
 }
 
-void	validate_input(char **argv, int size, int argc)
+void	validate_input(char **args, int size, int argc)
 {
 	int	i;
 	int	j;
@@ -72,15 +70,14 @@ void	validate_input(char **argv, int size, int argc)
 	i = 0;
 	while (i < size)
 	{
-		num = ft_atoi2(argv[i], argv, argc);
-		ft_printf("%d",num);
-		if(ft_strncmp(argv[i],"0",1) != 0 && num == 0)
-			fail_fun("Error", argv, argc);
+		num = ft_atoi2(args[i], args, argc);
+		if(ft_strncmp(args[i],"0",1) != 0 && num == 0)
+			ft_fail("Error", args, argc);
 		j = i + 1;
 		while (j < size)
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				fail_fun("Error", argv, argc);
+			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+				ft_fail("Error", args, argc);
 			j++;
 		}
 		i++;

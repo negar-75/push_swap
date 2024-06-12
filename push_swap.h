@@ -38,11 +38,12 @@ char				**split_to_nums(char *str);
 void				set_index(t_stack *node, long i);
 t_stack				*init_stack_a(char **argv, int argc);
 int					get_len(char **str);
+void				ft_free_split(char **str);
 
 t_bool				is_sorted(t_stack *a);
 int					stack_size(t_stack *s);
-void				simple_sort(t_stack **a, t_stack **b);
-void				init_arr(int *nums, t_stack **a);
+void				simple_sort(t_stack **a);
+void 				free_stack(t_stack **a);
 
 void				rra(t_stack **a);
 void				rrb(t_stack **b);

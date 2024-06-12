@@ -26,7 +26,7 @@ void	set_index(t_stack *node, long i)
 	}
 }
 
-t_bool	is_sorted(t_stack *a)
+t_bool		is_sorted(t_stack *a)
 {
 	t_stack	*current;
 	t_stack	*ne;
@@ -48,7 +48,7 @@ t_bool	is_sorted(t_stack *a)
 	return (1);
 }
 
-int	stack_size(t_stack *s)
+int		stack_size(t_stack *s)
 {
 	int	count;
 
@@ -60,6 +60,7 @@ int	stack_size(t_stack *s)
 	}
 	return (count);
 }
+
 t_stack	*last_node(t_stack *a)
 {
 	t_stack	*tmp;
@@ -71,17 +72,17 @@ t_stack	*last_node(t_stack *a)
 	}
 	return (tmp);
 }
-void	init_arr(int *nums, t_stack **a)
-{
-	t_stack *current;
-	int i;
 
-	i = 0;
-	current = *a;
-	while (current)
+void free_stack(t_stack **a)
+{
+	t_stack *tmp;
+
+	if(!a || !(*a))
+		return;
+	while(*a)
 	{
-		nums[i] = current->value;
-		current = current->next;
-		i++;
+		tmp = (*a)->next;
+		free(*a);
+		*a = tmp;
 	}
 }

@@ -1,7 +1,7 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -g  -Werror
+CFLAGS = -g  -Wall -Wextra -Werror
 RM = rm -f
 CLIBS = -L$(FT_PRINTF_FOLDER) -lftprintf -lm
 
@@ -48,8 +48,14 @@ $(NAME): $(OBJS)
 	
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
 	$(MAKE) clean -C $(FT_PRINTF_FOLDER)
+
+fclean: clean
+	@$(MAKE) fclean -C $(FT_PRINTF_FOLDER)
+	$(RM) $(NAME)
+
+re: clean all

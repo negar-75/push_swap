@@ -16,7 +16,10 @@ void	sort_3(t_stack **a)
 {
 	int	s[3];
 
-	init_arr(s, a);
+	s[0] = (*a)->value;
+	s[1] = (*a)->next->value;
+	s[2] = (*a)->next->next->value;
+
 	if (s[0] > s[1] && s[1] < s[2] && s[2] > s[0])
 		sa(a);
 	else if (s[0] > s[1] && s[1] < s[2] && s[2] < s[0])

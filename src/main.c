@@ -15,7 +15,7 @@
 static void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_size(*stack_a) <= 3)
-		simple_sort(stack_a, stack_b);
+		simple_sort(stack_a);
 	else
 		algorithm_sort(stack_a, stack_b);
 }
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	char	**args;
 
 	if (argc <= 1)
-		err_message("No argument");
+		err_message("./push_swap");
 	if (argc == 2)
 		args = split_to_nums(argv[1]);
 	else
@@ -39,4 +39,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (!is_sorted(a))
 		sort_stack(&a, &b);
+	if(argc == 2)
+		ft_free_split(args);
+	free_stack(&a);
 }
