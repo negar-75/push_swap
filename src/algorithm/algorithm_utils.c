@@ -58,7 +58,15 @@ int	find_index(t_stack *a, int num)
 	}
 	return (i);
 }
-
+/*
+Find the correct position to insert a number into a stack 'b' while
+maintaining descending order.
+Parameters:
+- b: Pointer to the head of the stack 'b'.
+- num_to_push: The number to find the correct position for.
+Returns:
+The index where 'num_to_push' should be inserted.
+*/
 int	find_place_in_b(t_stack *b, int num_to_push)
 {
 	int		i;
