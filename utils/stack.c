@@ -65,7 +65,7 @@ static void	initialize_indices(t_stack *stack)
 	set_indices(stack, s);
 }
 
-t_stack	*init_stack_a(char **argv, int argc)
+t_stack	*init_stack_a(char **args, int argc)
 {
 	t_stack	*new_stack;
 	t_stack	*last_node;
@@ -74,7 +74,7 @@ t_stack	*init_stack_a(char **argv, int argc)
 	new_stack = malloc(sizeof(t_stack));
 	if (!new_stack)
 		return (NULL);
-	new_stack->value = ft_atoi(argv[0]);
+	new_stack->value = ft_atoi(args[0]);
 	set_index(new_stack, -1);
 	last_node = new_stack;
 	i = 1;
@@ -84,7 +84,7 @@ t_stack	*init_stack_a(char **argv, int argc)
 		if (!last_node->next)
 			return (NULL);
 		last_node = last_node->next;
-		last_node->value = ft_atoi(argv[i]);
+		last_node->value = ft_atoi(args[i]);
 		set_index(last_node, -1);
 		i++;
 	}

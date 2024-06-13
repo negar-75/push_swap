@@ -28,22 +28,15 @@ void	set_index(t_stack *node, long i)
 
 t_bool		is_sorted(t_stack *a)
 {
-	t_stack	*current;
-	t_stack	*ne;
+	int	i;
 
-	current = a;
-	while (current)
+	i = a->value;
+	while (a)
 	{
-		ne = current->next;
-		while (ne)
-		{
-			if (current->value > ne->value)
-			{
-				return (0);
-			}
-			ne = ne->next;
-		}
-		current = current->next;
+		if (i > a->value)
+			return (0);
+		i = a->value;
+		a = a->next;
 	}
 	return (1);
 }

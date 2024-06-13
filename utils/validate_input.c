@@ -16,6 +16,8 @@ void	ft_free_split(char **str)
 {
 	int i;
 
+	if (str == NULL)
+		return;
 	i = 0;
 	while (str[i])
 	{
@@ -32,7 +34,7 @@ void	ft_fail(char *message, char **args, int argc)
 	err_message(message);
 }
 
-int	ft_atoi2(const char *str, char **argv, int argc)
+int	ft_atoi2(const char *str, char **args, int argc)
 {
 	int				mod;
 	long long int	i;
@@ -51,12 +53,12 @@ int	ft_atoi2(const char *str, char **argv, int argc)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_fail("Error", argv, argc);
+			ft_fail("Error", args, argc);
 		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		ft_fail("Error", argv, argc);
+		ft_fail("Error", args, argc);
 	return (mod * i);
 }
 
