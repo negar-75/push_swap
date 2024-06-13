@@ -6,11 +6,11 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:42:47 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 14:53:29 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:06:18 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 int	ft_isdigit(int c)
 {

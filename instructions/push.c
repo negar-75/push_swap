@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:41:57 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:02:24 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 18:40:17 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ static void	push(t_stack **src, t_stack **dest)
 void	pa(t_stack **a, t_stack **b)
 {
 	push(b, a);
-	ft_printf("pa\n");
+	ft_putendl("pa", 1);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	ft_printf("pb\n");
+	ft_putendl("pb", 1);
 }

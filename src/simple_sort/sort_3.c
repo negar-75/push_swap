@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:05:54 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/13 14:59:15 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 18:46:42 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,12 @@
 
 void	sort_3(t_stack **a)
 {
-	int	s[3];
-
-	s[0] = (*a)->value;
-	s[1] = (*a)->next->value;
-	s[2] = (*a)->next->next->value;
-	if (s[0] > s[1] && s[1] < s[2] && s[2] > s[0])
-		sa(a);
-	else if (s[0] > s[1] && s[1] < s[2] && s[2] < s[0])
+	if ((*a)->value > (*a)->next->value
+		&& (*a)->value > (*a)->next->next->value)
 		ra(a);
-	else if (s[0] < s[1] && s[1] > s[2] && s[2] < s[0])
+	if ((*a)->next->value > (*a)->value
+		&& (*a)->next->value > (*a)->next->next->value)
 		rra(a);
-	else if (s[0] > s[1] && s[1] > s[2] && s[2] < s[0])
-	{
+	if ((*a)->value > (*a)->next->value)
 		sa(a);
-		rra(a);
-	}
-	else if (s[0] < s[1] && s[1] > s[2] && s[2] > s[0])
-	{
-		sa(a);
-		ra(a);
-	}
 }

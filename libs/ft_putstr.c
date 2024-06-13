@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 15:34:39 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/16 15:26:38 by nnasiri          ###   ########.fr       */
+/*   Created: 2024/06/13 15:49:34 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/06/13 18:38:48 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_putstr(char *s, int fd)
 {
-	if (!lst || !lst->content || !del)
+	if (!s)
 		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	while (*s)
+	{
+		ft_putchar(*s, fd);
+		s++;
+	}
 }
-
-// void del(void *content)
-// {
-//  free(content);
-// }
-
-// int main()
-// {
-//    t_list * l =  ft_lstnew(malloc(1));
-//    ft_lstdelone(l, free); l = 0;
-//    return (0);
-// }

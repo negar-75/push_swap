@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 15:58:29 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/16 15:05:50 by nnasiri          ###   ########.fr       */
+/*   Created: 2024/06/13 15:49:54 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/06/13 16:08:18 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	ft_word_count(char const *s, char c)
 {
@@ -100,18 +100,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (split_str(arr, s, c));
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "";
-// 	char	c = 'b';
-//     char	**spt = ft_split(str, c);
-// 	int	i = 0;
-// 	while (spt[i] != NULL)
-// 	{
-//         printf("%s",spt[i]);
-//         printf("%c",'\n');
-// 		i++;
-// 	}
-//     return (0);
-// }

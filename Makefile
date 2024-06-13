@@ -9,8 +9,8 @@ CLIBS = -L$(FT_PRINTF_FOLDER) -lftprintf -lm
 SRC_FOLDER = src/
 UTILS_FOLDER = utils/
 INSTRUCTIONS_FOLDER = instructions/
-FT_PRINTF_FOLDER = libs/ft_printf/
-FT_PRINTF = $(FT_PRINTF_FOLDER)libftprintf.a
+LIBSFUNCS_FOLDER = libs/
+
 
 SRCS = $(addprefix $(SRC_FOLDER), \
 	main.c \
@@ -35,7 +35,17 @@ INSTRUCTIONS = $(addprefix $(INSTRUCTIONS_FOLDER), \
 	rotate.c \
 	swap.c)
 
-ALL_SRCS = $(SRCS) $(UTILS) $(INSTRUCTIONS)
+LIBSFUNCS = $(addprefix $(LIBSFUNCS_FOLDER), \
+	ft_isdigit.c \
+	ft_putchar.c \
+	ft_putendl.c \
+	ft_putstr.c  \
+	ft_split.c   \
+	ft_strlen.c  \
+	ft_strncmp.c \
+	ft_atoi.c)
+
+ALL_SRCS = $(SRCS) $(UTILS) $(INSTRUCTIONS) $(LIBSFUNCS)
 
 OBJS = $(ALL_SRCS:.c=.o)
 
@@ -43,7 +53,6 @@ OBJS = $(ALL_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(FT_PRINTF_FOLDER)
 	$(CC) $(CFLAGS) $(OBJS) $(CLIBS) -o $(NAME)
 	
 
@@ -52,10 +61,8 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
-	$(MAKE) clean -C $(FT_PRINTF_FOLDER)
 
 fclean: clean
-	@$(MAKE) fclean -C $(FT_PRINTF_FOLDER)
 	$(RM) $(NAME)
 
 re: clean all

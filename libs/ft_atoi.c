@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 14:28:33 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/12 18:26:43 by nnasiri          ###   ########.fr       */
+/*   Created: 2024/06/13 16:04:08 by nnasiri           #+#    #+#             */
+/*   Updated: 2024/06/13 18:47:38 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+long int	ft_atoi(const char *str)
 {
-	unsigned int	i;
+	int			i;
+	long int	res;
+	int			sign;
 
-	if (n == 0)
-		return (0);
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	res = 0;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
 	{
+		sign *= -1;
 		i++;
 	}
-	return ((unsigned char)(s1[i]) - (unsigned char)s2[i]);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		res *= 10;
+		res += str[i] - 48;
+		i++;
+	}
+	return (res * sign);
 }
-// int main()
-// {
-// 	printf("%d\n",(ft_strncmp("test\0", "test\200", 6)));
-// 	printf("%d",strncmp("test\0", "test\2000", 6));
-// 	return 0;
-// }

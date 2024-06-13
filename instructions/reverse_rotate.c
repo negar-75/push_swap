@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:02:37 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:09:13 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 18:40:22 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ static void	reverse_rotate(t_stack **s)
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	ft_printf("rra\n");
+	ft_putendl("rra", 1);
 }
 
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	ft_printf("rrb\n");
+	ft_putendl("rrb", 1);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rrr\n");
+	ft_putendl("rrr", 1);
 }

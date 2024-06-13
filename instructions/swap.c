@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:03:41 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:09:31 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 18:40:33 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static void	swap(t_stack **s)
 void	sa(t_stack **a)
 {
 	swap(a);
-	ft_printf("sa\n");
+	ft_putendl("sa", 1);
 }
 
 void	sb(t_stack **b)
 {
 	swap(b);
-	ft_printf("sb\n");
+	ft_putendl("sb", 1);
 }
