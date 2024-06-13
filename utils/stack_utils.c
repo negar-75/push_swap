@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:53:16 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:06:43 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 14:59:01 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	set_index(t_stack *node, long i)
 	}
 }
 
-t_bool		is_sorted(t_stack *a)
+t_bool	is_sorted(t_stack *a)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ t_bool		is_sorted(t_stack *a)
 	return (1);
 }
 
-int		stack_size(t_stack *s)
+int	stack_size(t_stack *s)
 {
 	int	count;
 
@@ -66,13 +66,13 @@ t_stack	*last_node(t_stack *a)
 	return (tmp);
 }
 
-void free_stack(t_stack **a)
+void	free_stack(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	if(!a || !(*a))
-		return;
-	while(*a)
+	if (!a || !(*a))
+		return ;
+	while (*a)
 	{
 		tmp = (*a)->next;
 		free(*a);

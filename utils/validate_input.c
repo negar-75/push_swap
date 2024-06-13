@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:52:21 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 19:39:06 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:26:58 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_free_split(char **str)
 {
-	int i;
+	int	i;
 
 	if (str == NULL)
-		return;
+		return ;
 	i = 0;
 	while (str[i])
 	{
@@ -46,7 +46,7 @@ int	ft_atoi2(const char *str, char **args, int argc)
 		str++;
 	if (*str == '-' || *str == '+')
 	{
-		if(*str == '-')
+		if (*str == '-')
 			mod = -1;
 		str++;
 	}
@@ -66,14 +66,15 @@ void	validate_input(char **args, int size, int argc)
 {
 	int	i;
 	int	j;
-	int num;
-	
+	int	num;
+
 	j = 0;
 	i = 0;
 	while (i < size)
 	{
 		num = ft_atoi2(args[i], args, argc);
-		if(ft_strncmp(args[i],"0",1) != 0 && num == 0)
+		if ((ft_strncmp(args[i], "0", 1) != 0 && ft_strncmp(args[i], "+0",
+					2) != 0 && ft_strncmp(args[i], "-0", 2) != 0) && num == 0)
 			ft_fail("Error", args, argc);
 		j = i + 1;
 		while (j < size)

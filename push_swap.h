@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:07:32 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:07:35 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:31:34 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libs/libft/libft.h"
 # include <limits.h>
 
-typedef enum
+typedef enum s_bool
 {
 	false = 0,
 	true = 1
@@ -43,7 +43,7 @@ void				ft_free_split(char **str);
 t_bool				is_sorted(t_stack *a);
 int					stack_size(t_stack *s);
 void				simple_sort(t_stack **a);
-void 				free_stack(t_stack **a);
+void				free_stack(t_stack **a);
 
 void				rra(t_stack **a);
 void				rrb(t_stack **b);

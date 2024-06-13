@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:05:12 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:11:59 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 14:59:30 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	cost_rra_rb(t_stack **a, t_stack **b, int num, char source)
 
 int	cost_ra_rrb(t_stack **a, t_stack **b, int num, char source)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (source == 'a')

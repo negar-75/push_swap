@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:06:27 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 16:06:30 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:29:57 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	char	**args;
 
 	if (argc <= 1)
-		err_message("./push_swap");
+		exit(1);
 	if (argc == 2)
 		args = split_to_nums(argv[1]);
 	else
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (!is_sorted(a))
 		sort_stack(&a, &b);
-	if(argc == 2)
+	if (argc == 2)
 		ft_free_split(args);
 	free_stack(&a);
 }

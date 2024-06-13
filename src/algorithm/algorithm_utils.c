@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:04:39 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/06/11 17:01:07 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:30:28 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	find_index(t_stack *a, int num)
 	}
 	return (i);
 }
+
 /*
 Find the correct position to insert a number into a stack 'b' while
 maintaining descending order.
@@ -67,6 +68,7 @@ Parameters:
 Returns:
 The index where 'num_to_push' should be inserted.
 */
+
 int	find_place_in_b(t_stack *b, int num_to_push)
 {
 	int		i;
@@ -92,7 +94,7 @@ int	find_place_in_b(t_stack *b, int num_to_push)
 
 int	find_place_in_a(t_stack *a, int num_to_push_back)
 {
-	int			i;
+	int		i;
 	t_stack	*tmp;
 
 	i = 1;
