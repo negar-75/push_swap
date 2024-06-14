@@ -15,7 +15,7 @@
 /*
 this function will calculate for each node in stack a
 how many rotations we need to push number in stack b in descending order
-it will go through all nodes and get return the lowest
+it will go through all nodes and get return the leastt
 amount of movements we can make
 */
 int	rotate_type_ab(t_stack **a, t_stack **b)
