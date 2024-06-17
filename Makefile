@@ -3,7 +3,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -g  -Wall -Wextra -Werror
 RM = rm -f
-CLIBS = -L$(FT_PRINTF_FOLDER) -lftprintf -lm
+
 
 
 SRC_FOLDER = src/
